@@ -1,0 +1,41 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_lstjoin.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: passef <passef@student.42.fr>              +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2017/12/28 23:22:51 by passef            #+#    #+#             */
+/*   Updated: 2017/12/28 23:22:55 by passef           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include "libft.h"
+
+t_list	*ft_lstjoin(t_list *lst1, t_list *lst2)
+{
+	t_list	*list_merge;
+	t_list	*begin_list_merge;
+
+	list_merge = lst1;
+	begin_list_merge = list_merge;
+	while (lst1 != NULL)
+	{
+		list_merge = (t_list*)malloc(sizeof(list_merge));
+		if (list_merge == NULL)
+			return (NULL);
+		list_merge = lst1;
+		lst1 = lst1->next;
+		list_merge = list_merge->next;
+	}
+	while (lst2 != NULL)
+	{
+		list_merge = (t_list*)malloc(sizeof(list_merge));
+		if (list_merge == NULL)
+			return (NULL);
+		list_merge = lst2;
+		lst2 = lst2->next;
+		list_merge = list_merge->next;
+	}
+	return (begin_list_merge);
+}

@@ -1,0 +1,17 @@
+// Place your settings in this file to overwrite default and user settings.
+{
+    "files.associations": {
+        "libft.h": "c",
+        "locale": "c",
+        "grimly.h": "c",
+        "istream": "c",
+        "ios": "c",
+        "__functional_base": "c",
+        "array": "c",
+        "memory": "c",
+        "tuple": "c",
+        "utility": "c",
+        "iterator": "c",
+        "__locale": "c"
+    }
+}
