@@ -6,7 +6,7 @@
 /*   By: passef <passef@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/18 14:51:50 by passef            #+#    #+#             */
-/*   Updated: 2018/01/19 19:11:31 by passef           ###   ########.fr       */
+/*   Updated: 2018/01/19 19:17:13 by passef           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,18 @@ int				parse_params(t_env *e)
 	e->buff_gnl = (e->map_line * e->map_col) + e->map_col;
 	return (1);
 }
+
+int				get_map(t_env *e)
+{
+	e->map = ft_strnew(e->buff_gnl);
+	if (read(e->map_fd, e->map, e->buff_gnl) == -1)
+	{
+		ft_puterror("cannot read\n");
+		return (0);
+	}
+	return (1);
+}
+
 int				get_map_col(t_env *e, int i)
 {
 	int		j;
